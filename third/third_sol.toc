@@ -1,0 +1,32 @@
+\selectlanguage *{russian}
+\contentsline {section}{\numberline {1}Первое задание}{4}%
+\contentsline {subsection}{\numberline {1.1}Постановка задачи}{4}%
+\contentsline {subsection}{\numberline {1.2}Алгоритм сортировки}{4}%
+\contentsline {subsection}{\numberline {1.3}Оценка функции роста выполнения алгоритма сортировки пузырьком}{6}%
+\contentsline {subsection}{\numberline {1.4}Результаты выполнения сортировки}{7}%
+\contentsline {subsection}{\numberline {1.5}Код алгоритма и основной программы}{8}%
+\contentsline {subsection}{\numberline {1.6}Графики зависимостей теоретической и практической сложности}{10}%
+\contentsline {subsection}{\numberline {1.7}Анализ результатов}{11}%
+\contentsline {section}{\numberline {2}Задание 2}{11}%
+\contentsline {subsection}{\numberline {2.1}Постановка задачи}{11}%
+\contentsline {subsection}{\numberline {2.2}Результаты тестирования на массиве, отсортированном строго по возрастанию}{12}%
+\contentsline {subsection}{\numberline {2.3}Результаты тестирования на массиве, отсортированном строго по убыванию}{14}%
+\contentsline {subsection}{\numberline {2.4}Код тестирующей программы}{15}%
+\contentsline {subsection}{\numberline {2.5}График зависимости теоретической и практической вычислительной сложности алгоритма для трех рассмотренных случаев}{16}%
+\contentsline {subsection}{\numberline {2.6}Емкостная сложность алгоритма от $n$ }{16}%
+\contentsline {subsection}{\numberline {2.7}Анализ результатов}{17}%
+\contentsline {section}{\numberline {3}Задание 3}{17}%
+\contentsline {subsection}{\numberline {3.1}Постановка задачи}{17}%
+\contentsline {subsection}{\numberline {3.2}Алгоритм сортировки}{18}%
+\contentsline {subsection}{\numberline {3.3}Оценка функции роста выполнения алгоритма сортировки вставками}{19}%
+\contentsline {subsection}{\numberline {3.4}Результаты выполнения сортировки}{19}%
+\contentsline {subsection}{\numberline {3.5}Код программы}{21}%
+\contentsline {subsection}{\numberline {3.6}График зависимости вычислительных сложностей для 2 случаев}{21}%
+\contentsline {subsection}{\numberline {3.7}Определение эффективности алгоритма}{22}%
+\contentsline {subsection}{\numberline {3.8}Сравнение эффективности двух алгоритмов из заданий 1 и 3}{22}%
+\contentsline {section}{\numberline {4}Ответы на дополнительные вопросы}{23}%
+\contentsline {paragraph}{Вопрос 7}{23}%
+\contentsline {paragraph}{Вопрос 8}{25}%
+\contentsline {paragraph}{Вопрос 9}{25}%
+\contentsline {section}{\numberline {5}Выводы}{26}%
+\contentsline {section}{\numberline {6}Список используемой литературы}{26}%
