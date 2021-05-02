@@ -1,0 +1,136 @@
+\documentclass[a4paper, 14pt]{extarticle}
+
+\input{preambule_mirea.tex}
+
+\begin{document}
+\includepdf{titul_seventh}
+\newpage
+\tableofcontents
+\newpage
+\section{Главное задание}
+\subsection{Постановка задачи}
+Разработать многомодульную программу, которая демонстрирует
+выполнение всех операций, определенных вариантом, над линейным
+двунаправленным динамическим списком и функции для работы с этой структурой:
+
+\subsection{Определение операций над списком}
+\paragraph{Определение структуры узла двунаправленного списка}
+Согласно варианту No9 в качестве информационной части узла списка
+используются поля: марка автомобиля, страна изготовитель,
+год выпуска.
+\paragraph{Описание обязательных операций над списком}
+
+\textit{Обязательные:}
+\begin{enumerate}
+  \item Вывод списка в двух направлениях.
+  \item Поиск узла с заданным значением.
+
+    \textit{Функции дополнительного задания варианта:}
+  \item Вставка узла по автомобилю в списке своего модельного ряда
+    перед узлом, год выпуска которого меньше.
+  \item Формирование нового списка с узлом вида ("модельный" узел): марка автомобиля
+    и указатель на начало модельного ряда данной марки в исходном списке.
+  \item Удаление информации обо всех автомобилях заданной марки.
+\end{enumerate}
+
+\newpage
+\paragraph{Алгоритмы операций над списком}
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{pictures/print_list.png}
+  \caption{Алгоритм вывода списка как в прямом, так и обратном направлениях}
+  \label{fig:print_list}
+\end{figure}
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{pictures/search_model_ok.png}
+  \caption{Алгоритм поиска первого элемента с заданным названием модели}
+  \label{fig:search_model}
+\end{figure}
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.6\textwidth]{pictures/createList.png}
+  \caption{Алгоритм создания списка с "модельными" узлами}
+  \label{fig:create_list}
+\end{figure}
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.4\textwidth]{pictures/insert_model_fix.png}
+  \caption{Алгоритм вставки элемента перед той же моделью с меньшим годом}
+  \label{fig:create_list}
+\end{figure}
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{pictures/delete_row.png}
+  \caption{Алгоритм удаления одного узла (требуется в следующем алгоритме)}
+  \label{fig:create_list}
+\end{figure}
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.6\textwidth]{pictures/delete_model.png}
+  \caption{Алгоритм удаления всех элементов с заданным названием модели}
+  \label{fig:create_list}
+\end{figure}
+\newpage
+\subsection{Код программы}
+Реализация на C++:
+
+\textit{Код файла car\_list.h}
+\lstinputlisting{code/car_list.h}
+
+\textit{Код файла car\_list.cpp}
+\lstinputlisting{code/car_list.cpp}
+
+\textit{Код файла linked\_list.cpp}
+\lstinputlisting{code/linked_list.cpp}
+\newpage
+\subsection{Результаты тестирования}
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.7\textwidth]{pictures/first_test.png}
+  \caption{Результаты тестирования программы 1 тест}
+  \label{fig:test1}
+\end{figure}
+\newpage
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.7\textwidth]{pictures/second_test.png}
+  \caption{Результаты тестирования программы 2 тест}
+  \label{fig:test2}
+\end{figure}
+\subsection{Сложность первой дополнительной операции (вставка в список)}
+\begin{enumerate}
+  \item На линейном динамическом списке $T(n)=\Theta(n)$ т.к. для вставки
+    необходимо получить нужный адрес элемента, что занимает  $\Theta(n)$ времени
+    в среднем случае. 
+  \item На одномерном массиве также $T(n)=\Theta(n)$ т.к. для вставки все равно
+    необходимо получить адрес элемента, перед которым необходимо вставлять,
+    что занимает  $\Theta(n)$ в среднем случае.
+\end{enumerate}
+\newpage
+\section*{Выводы}
+\addcontentsline{toc}{section}{Выводы}
+В ходе выполнения работы была реализована структура
+«двунаправленный список», поддерживающий следующие обязательные операции: вывод
+хранящихся значений узлов списка в прямом и обратном порядках; поиск первого
+элемента в списке по заданной модели; вставка нового узла перед узлом,
+год выпуска которого меньше; создание списка с "модельными" узлами;
+удаление всех элементов с заданным названием модели. Также в ходе
+выполнения работы были усвоены основы работы с двунаправленными списками.
+Тестирование подтвердило правильность работы методов.
+\section*{Список информационных источников}
+\addcontentsline{toc}{section}{Список информационных источников}
+\begin{enumerate}[leftmargin=*]
+  \item Thomas H. Cormen, Clifford Stein и другие: Introduction to Algorithms, 3rd Edition.
+    Сентябрь 2009. The MIT Press.
+  \item N. Wirth: Algorithms and Data Structures. Август 2004.
+    \\ https://people.inf.ethz.ch/wirth/AD.pdf.
+  \item Linked list~//~Wikipedia \\~
+    [Электронный ресурс]. URL:
+    \\ https://en.wikipedia.org/wiki/Linked\_list
+    (Дата обращения: 02.05.2021)
+   \item Курс Algorithms, part 2 // Coursera [Электронный ресурс]. URL:
+     \\ https://www.coursera.org/learn/algorithms-part2
+     (Дата обращения: 02.05.2021)
+\end{enumerate}
+\end{document}

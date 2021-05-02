@@ -1,0 +1,178 @@
+% file's preambule
+
+% Если вы работаете не в XeLaTeX, то сами разбирайтесь =)
+
+% connect packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[T2A]{fontenc}                   %!? закрепляет внутреннюю кодировку LaTeX
+%\usepackage[utf8]{inputenc}                 %!  закрепляет кодировку utf8
+\usepackage{fontspec}                        % Шрифты
+\usepackage{indentfirst}                    %   добавить indent перед первым параграфом
+\setlength{\parindent}{1.27cm}
+\usepackage{polyglossia}                     % Русский язык
+\setdefaultlanguage{russian}
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\newfontfamily\cyrillicfont{Times New Roman}[Script=Cyrillic]
+%\usepackage[english,russian]{babel}         %!  подключает русский и английский
+\usepackage{amsmath}                        %!  |
+\usepackage{amssymb,textcomp, esvect,esint} %!  |важно для формул 
+\usepackage{geometry}                       %!  отступ от граней
+\geometry{verbose,a4paper,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=1cm}
+\usepackage{amsfonts}                       %!  математические шрифты
+\usepackage{amsthm}                         %!  newtheorem и их сквозная нумерация
+\usepackage{graphicx}                       %?  графическое изменение текста
+\usepackage{soulutf8}% Поддержка переносоустойчивых подчёркиваний и зачёркиваний
+\usepackage{enumitem}                       %!  задание макета перечня.
+%\usepackage[unicode, pdftex]{hyperref}      %!  оглавление для панели навигации по PDF-документу + гиперссылки
+\usepackage{setspace}                       % Межстроковые интервалы
+\onehalfspacing
+\usepackage{booktabs}                       %!  добавляет книжные линии в таблицы
+%\usepackage{hypcap}                         %?  адресация на картинку, а не на подпись к ней
+\usepackage{abraces}                        %?  фигурные скобки сверху или снизу текста
+\usepackage{caption}                        %-  позволяет корректировать caption 
+\DeclareCaptionLabelSeparator{dash}{ - }
+\captionsetup[table]{labelformat=simple, labelsep=dash, justification=raggedleft,
+singlelinecheck=off}
+\captionsetup[figure]{labelformat=simple, labelsep=dash}
+\usepackage{multirow}                       %   объединение ячеек в таблицах
+\usepackage{pifont}                         %!  нужен для крестика
+\usepackage{cancel}                         %!  аутентичное перечеркивание текста
+\usepackage{ulem}                           %!  перечеркивание текста
+\usepackage{tikz}                           %!  высокоуровневые рисунки (кружочек)
+\usepackage{titling}                        %-  автоматическое заглавие 
+\usepackage{titlesec}  % нормальные заголовки секций
+\titleformat{\section}
+{\normalfont\large\bfseries\filcenter}{}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}{\thesubsection.}{5pt}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize}{\thesubsubsection.}{5pt}{}
+\titleformat{\paragraph}
+  {\normalfont\normalsize\bfseries}{\theparagraph}{5pt}{}
+
+\usepackage{ragged2e} % Для выравнивания текста по ширине
+\justifying
+
+%\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+\usepackage{blindtext}                      %-  слепой текст
+\usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+\usepackage{mathptmx}
+
+\usepackage{import}                         %|
+\usepackage{xifthen}                        %|
+\usepackage{pdfpages}                       %|
+%\usepackage{transparent}                    %| вставка ink figures
+\usepackage{rotating}
+\usepackage{array} % Картиночки в таблицы
+
+\usepackage{listings} % Для языков программирования 
+\usepackage{xcolor}
+\lstset {
+    language=C++,
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+}
+
+\usepackage{lmodern}
+
+\colorlet{comment}{green!50!black}
+\colorlet{cppcomment}{teal}
+\colorlet{symb}{blue!50!black}
+\colorlet{number}{violet}
+
+\newcommand*{\textcolorsymb}{\textcolor{symb}}
+
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{black_red}{rgb}{0.54, 0, 0}
+
+\lstdefinestyle{cpp}{%
+  language=C++,
+  columns=flexible,
+  basewidth=.5em,  
+  tabsize=2,
+  basicstyle=\footnotesize,
+  backgroundcolor=\color{backcolour},
+  showspaces=false,
+  showstringspaces=false,
+  commentstyle={\itshape\color{comment}\let\textcolorsymb\relax},
+  keywordstyle=\bfseries\color{black_red},
+  morecomment={[l][\itshape\color{cppcomment}\let\textcolorsymb\relax]//},
+  literate=%
+    {\{}{\textcolorsymb{\{}}1
+    {\}}{\textcolorsymb{\}}}1
+    {(}{\textcolorsymb{(}}1
+    {)}{\textcolorsymb{)}}1
+    {;}{\textcolorsymb{;}}1
+    {=}{\textcolorsymb{=}}1
+    {<}{\textcolorsymb{<}}1
+    {>}{\textcolorsymb{>}}1
+    {!}{\textcolorsymb{!}}1
+    {\&}{\textcolorsymb{\&}}1 
+    {|}{\textcolorsymb{|}}1
+    {?}{\textcolorsymb{?}}1
+    {:}{\textcolorsymb{:}}1
+    {+}{\textcolorsymb{+}}1
+    {-}{\textcolorsymb{-}}1
+    {,}{\textcolorsymb{,}}1
+    {\%}{\textcolorsymb{\%}}1
+    {\^}{\textcolorsymb{\textasciicircum}}1
+    {~}{\textcolorsymb{\textasciitilde}}1
+    %% {/}{\textcolorsymb{/}}1
+    %% {*}{\textcolorsymb{*}}1
+    % 2 (optionally)
+    {==}{\textcolorsymb{==}}2
+    {>=}{\textcolorsymb{=>}}2
+    {<=}{\textcolorsymb{<=}}2
+    {!=}{\textcolorsymb{!=}}2
+    {+=}{\textcolorsymb{+=}}2
+    {-=}{\textcolorsymb{-=}}2
+    {*=}{\textcolorsymb{*=}}2
+    {/=}{\textcolorsymb{/=}}2
+    {\%=}{\textcolorsymb{\%=}}2
+    {\&\&}{\textcolorsymb{\&\&}}2
+    {||}{\textcolorsymb{||}}2
+    {++}{\textcolorsymb{++}}2
+    {--}{\textcolorsymb{--}}2
+    {>>}{\textcolorsymb{>\kern0pt>}}2
+    {<<}{\textcolorsymb{<\kern0pt<}}2
+    {::}{\textcolorsymb{::}}2
+    % 3 (optionally)
+    {>>=}{\textcolorsymb{>\kern0pt>=}}3
+    {<<=}{\textcolorsymb{<\kern0pt<=}}3
+    % Remove byte order mark
+    {^^ef^^bb^^bf}{}0
+}
+\lstnewenvironment{cpp}{\lstset{style=cpp}}{}
+\lstset{style=cpp}
+  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%% ВСТАВКА РИСУНКО ИЗ INKSCAPE %%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newenvironment{itemize*}
+{
+    \begin{itemize}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{itemize}
+}
+
+\newenvironment{enumerate*}
+{
+    \begin{enumerate}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{enumerate}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
